@@ -20,7 +20,7 @@ function go_to_city (val) {
         whereWeWork(); // load the org data
     }
     if (val === 2) {
-        mymap.flyTo([51.3919, -1.500292], 7);
+        //mymap.flyTo([51.3919, -1.500292], 7);
         plot_points(); // load the volunteer data
     }
     if (val === 3) {
@@ -58,7 +58,7 @@ function plot_points() {
         
 
         //L.marker( latlng ).addTo(mymap).bindPopup(data['Sheet1'][i]['First Name']+' '+ data['Sheet1'][i]['Last Name']);
-        L.marker( latlng, {icon: volunteer_icon} ).addTo(mymap).bindPopup(popUpLayout(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role'], 
+        L.marker( latlng).addTo(mymap).bindPopup(popUpLayout(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role'], 
             data['Sheet1'][i]['About'], data['Sheet1'][i]['Currently Reading'], data['Sheet1'][i]['Favourite Band'], data['Sheet1'][i]['Outside Work'], imgsrc));
 
     }
