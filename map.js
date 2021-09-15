@@ -31,7 +31,8 @@ function go_to_city (val) {
 
 // style='width:170px;height:180px;'
 
-function popUpLayout(first, last, role, about, read, music, outside_work, image_src) {
+// pop ups
+function popUpLayoutManager(first, last, role, about, read, music, outside_work, image_src) {
     var html ="<center><img alt='File' src='"+image_src+"' style='border-radius: 50%;width:170px;height:180px;'></center><h> <font size='+2'></img><br>" 
     html = html + "<center>" +first + "  " + last + "</font></h>"
     html = html + "<br>" + role
@@ -42,6 +43,13 @@ function popUpLayout(first, last, role, about, read, music, outside_work, image_
 
     return html
     console.log(html);
+}
+
+function popUpLayout(first, last, role) {
+	var html ="<center><h> <font size='+2'></img><br>" 
+    html = html + "<center>" +first + "  " + last + "</font></h>"
+    html = html + "<br>" + role
+	return html
 }
 
 // this will be use to plot all of the volunteer locations
@@ -58,9 +66,16 @@ function plot_points() {
         
 
         //L.marker( latlng ).addTo(mymap).bindPopup(data['Sheet1'][i]['First Name']+' '+ data['Sheet1'][i]['Last Name']);
-        L.marker( latlng).addTo(mymap).bindPopup(popUpLayout(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role'], 
-            data['Sheet1'][i]['About'], data['Sheet1'][i]['Currently Reading'], data['Sheet1'][i]['Favourite Band'], data['Sheet1'][i]['Outside Work'], imgsrc));
-
+		
+		// different popups depending on whether they are a manager or not
+		
+		if (data['Sheet1'][i]['Manager'] === 1) {
+			L.marker( latlng).addTo(mymap).bindPopup(popUpLayoutManager(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role'], 
+				data['Sheet1'][i]['About'], data['Sheet1'][i]['Currently Reading'], data['Sheet1'][i]['Favourite Band'], data['Sheet1'][i]['Outside Work'], imgsrc));
+		
+		} else {
+			L.marker(latlng).addTo(mymap).bindPopup(popUpLayout(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role']));	
+		}
     }
 }
 
