@@ -29,7 +29,7 @@ var data = {
      "Last Name": "Beddows",
      "Role": "Co-Founder",
      "About": "Ed holds a Geography BSc from Durham University and has completed the SDG Academy Course on Environmental Security and Sustaining Peace. With a large focus on interdisciplinary research, he specialises in environmental change, management and conservation. Within this, he uses a range of remote sensing and modelling software.",
-     "Currently Reading": "Kon-Tiki, by Thor Hererdahl ",
+     "Currently Reading": "Kon-Tiki, by Thor Hererdahl",
      "Favourite Band": "The Juju Exchange",
      "Outside Work": "Adventure sports enthusiast (skiing, hiking), Hockey, Singing",
      "lat": 52.808922,
@@ -40,10 +40,10 @@ var data = {
      "First Name": "Grachen",
      "Last Name": "Oneko",
      "Role": "GIS Manager",
-     "About": "Volunteer that is based in the Netherlands",
-     "Currently Reading": "The Age of Surveillance Capitalism by Shoshana Zuboff‎",
-     "Favourite Band": "Skinshape",
-     "Outside Work": "Travelling, Cycling and Computer Gaming",
+     "About": "Grachen works closesly with the volunteers, ensuring that projects are met on time, whilst also liasing with the clients and charities to ensure their standards are met. Grachen has recently won GIS-E employee of the month!",
+     "Currently Reading": "Prisoners of Geography by Tim Marshall",
+     "Favourite Band": "ABBA",
+     "Outside Work": "Travelling",
      "lat": 51.896808,
      "lng": 4.768862,
      "Manager": 1
@@ -58,7 +58,7 @@ var data = {
      "Outside Work": "Rowing, Running, Guitar",
      "lat": 51.39198,
      "lng": -1.500292,
-     "Manager": 0
+     "Manager": 1
    },
    {
      "First Name": "Tristan ",

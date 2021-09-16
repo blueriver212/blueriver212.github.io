@@ -62,17 +62,20 @@ function plot_points() {
         var latlng = L.latLng({ lat: data['Sheet1'][i]['lat'], lng: data['Sheet1'][i]['lng'] });
 
         // create an image src based on the name of the input
-        var imgsrc = "/images/"+data['Sheet1'][i]['First Name']+".jpeg";
+        var imgsrc = "./images/"+data['Sheet1'][i]['First Name']+".jpeg";
         
 
-        //L.marker( latlng ).addTo(mymap).bindPopup(data['Sheet1'][i]['First Name']+' '+ data['Sheet1'][i]['Last Name']);
-		
+		// var testMarkerRed = L.AwesomeMarkers.icon({
+				// icon:'play',
+				// markerColor:'red'
+			// })
+
 		// different popups depending on whether they are a manager or not
 		
 		if (data['Sheet1'][i]['Manager'] === 1) {
 			L.marker( latlng).addTo(mymap).bindPopup(popUpLayoutManager(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role'], 
 				data['Sheet1'][i]['About'], data['Sheet1'][i]['Currently Reading'], data['Sheet1'][i]['Favourite Band'], data['Sheet1'][i]['Outside Work'], imgsrc));
-		
+			
 		} else {
 			L.marker(latlng).addTo(mymap).bindPopup(popUpLayout(data['Sheet1'][i]['First Name'], data['Sheet1'][i]['Last Name'], data['Sheet1'][i]['Role']));	
 		}
