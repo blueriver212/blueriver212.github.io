@@ -200,8 +200,8 @@ var data = {
      "Currently Reading": "",
      "Favourite Band": "",
      "Outside Work": "",
-     "lat": 54.691952,
-     "lng": -1.514137,
+     "lat": 51.993093,
+     "lng": -0.988420,
      "Manager": 0
    },
    {
