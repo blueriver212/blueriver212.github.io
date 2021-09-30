@@ -227,6 +227,18 @@ var data = {
      "lat": 40.566859,
      "lng": -122.363217,
      "Manager": 0
+   },
+     {
+     "First Name": "Yuanyuan",
+     "Last Name": "Xie",
+     "Role": "GIS Volunteer",
+     "About": "",
+     "Currently Reading": "",
+     "Favourite Band": "",
+     "Outside Work": "",
+     "lat": 43.653225,
+     "lng": -79.383186,
+     "Manager": 0
    }
   ]
   }
