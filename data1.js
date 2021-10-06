@@ -239,6 +239,18 @@ var data = {
      "lat": 43.653225,
      "lng": -79.383186,
      "Manager": 0
+   },
+     {
+     "First Name": "Rachel",
+     "Last Name": "Bell",
+     "Role": "GIS Volunteer",
+     "About": "",
+     "Currently Reading": "",
+     "Favourite Band": "",
+     "Outside Work": "",
+     "lat": 53.800755,
+     "lng": -1.549077,
+     "Manager": 0
    }
   ]
   }
