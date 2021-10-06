@@ -263,6 +263,18 @@ var data = {
      "lat": 50.909698,
      "lng": -1.404351,
      "Manager": 0
+   },
+    {
+     "First Name": "Harry",
+     "Last Name": "Koido-Bunt",
+     "Role": "GIS Volunteer",
+     "About": "",
+     "Currently Reading": "",
+     "Favourite Band": "",
+     "Outside Work": "",
+     "lat": 53.321159,
+     "lng": -2.237700,
+     "Manager": 0
    }
   ]
   }
