@@ -275,6 +275,18 @@ var data = {
      "lat": 53.321159,
      "lng": -2.237700,
      "Manager": 0
-   }
+   },
+    {
+     "First Name": "Mhamed",
+     "Last Name": "Alessandro",
+     "Role": "GIS Volunteer",
+     "About": "",
+     "Currently Reading": "",
+     "Favourite Band": "",
+     "Outside Work": "",
+     "lat": 45.954889,
+     "lng": 8.548518,
+     "Manager": 0
+   }  
   ]
   }
