@@ -47,8 +47,7 @@ function popUpLayoutManager(first, last, role, about, read, music, outside_work,
 
 function popUpLayout(first, last, role) {
 	//var html ="<center><h> <font size='+2'></img>" 
-    	var html;
-	html = html + "<center><font size='+2'><h>" +first + "  " + last + "</font></h>"
+    var html = "<center><font size='+2'><h>" +first + "  " + last + "</font></h>"
     html = html + "<br>" + role
 	return html
 }
