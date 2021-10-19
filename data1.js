@@ -287,6 +287,30 @@ var data = {
      "lat": 45.954889,
      "lng": 8.548518,
      "Manager": 0
-   }  
+   },
+   {
+    "First Name": "Idris",
+    "Last Name": "Aderinto",
+    "Role": "GIS Volunteer",
+    "About": "",
+    "Currently Reading": "",
+    "Favourite Band": "",
+    "Outside Work": "",
+    "lat": 6.524379,
+    "lng": 3.379206,
+    "Manager": 0
+    },
+    {
+     "First Name": "Julia",
+     "Last Name": "Faherty",
+     "Role": "GIS Volunteer",
+     "About": "",
+     "Currently Reading": "",
+     "Favourite Band": "",
+     "Outside Work": "",
+     "lat": 51.672555,
+     "lng": -0.133198,
+     "Manager": 0
+   }      
   ]
   }
