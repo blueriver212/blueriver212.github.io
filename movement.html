@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="p5.min.js"></script>
+    <script src="sketch.js"></script>
+    <script src="boid.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+        body, html {
+            width: 100%;
+            height: 100%;
+            overflow:hidden;
+            overflow-y:hidden;
+        }
+
+        #button {
+     /* line-height: 12px;
+     width: 18px;
+     font-size: 8pt; */
+     margin-top: 1px;
+     margin-right: 2px;
+     position:fixed;
+ }
+
+
+    </style>
+
+</head>
+    <body>
+        <!-- <div>
+            <button style="z-index:200;">test</button>
+            <div  id="sketch" style="width:100%; height:100%;z-index: -100;"></div>
+        </div> -->
+
+
+        <div id="wrapper">
+            <div id="container">
+                <div id="sketch" style="width:100%; height:100%;z-index:-100;"></div>
+                <div>
+                    <div class="card text-white text-center bg-dark mb-3" id="button" style="max-width: 18rem; z-index:100; top:15%; left:0;">
+                        <div class="card-header">By Indigo Brownhall</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Boid Theory</h5>
+                        <p class="card-text">Boids is an artificial life theory developed by Craig Reynolds. The aim is to replicate the behaviour of a flock of birds. Each of the "boids" on the webpage only follow three simple rules:</p>
+                        <h5 class="card-title">1. Seperation</h5>
+                        <p class="card-text">Each bird attempts to maintain a reasonable amount of distance between itself and any nearby birds, to prevent overcrowding.
+                        <h5 class="card-title">2. Alignment</h5>
+                        <p class="card-text">Birds try to change their position so that it corresponds with the average alignment of other nearby birds.
+                        <h5 class="card-title">3. Cohesion</h5>
+                        <p class="card-text">Every bird attempts to move towards the average position of other nearby birds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card text-white text-center bg-dark mb-3" id="button" style="max-width: 18rem; z-index:100; right:0; top:35%">
+                        <div class="card-header">
+                            <h5 class="card-title">Controls</h5>
+                        </div>
+                        <div class="card-body"></p>
+                        <h5 class="card-title">1. Seperation</h5>
+                        <p class="card-text" id="seperation"></p>
+                        <h5 class="card-title">2. Alignment</h5>
+                        <p class="card-text" id="alignment"></p>
+                        <h5 class="card-title">3. Cohesion</h5>
+                        <p class="card-text" id="cohesion"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+    
+    
+    </script>
+</html>
