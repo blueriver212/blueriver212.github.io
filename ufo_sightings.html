@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="styleshhet" href="style.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"> -->
+	
+        
+        <!-- Local Files -->
+        <!-- <script src = "map.js"></script> 
+        <script src = "data1.js"></script>
+        <script src = "netherlands.js"></script>
+        <script src = "orgs.js"></script> -->
+        <script src = "ufo.js"></script>
+        <script src = "uk_ufos.js"></script>
+        
+    </head>
+
+    <body>
+    <!-- <nav class = "navbar navbar-expand-sm navbar-dark bg-dark">
+        <a href="#" class="navbar-brand">GIS-E</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class= "collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a href="#" class = "nav-link" onclick="go_to_city(1);">Where do we work?</a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a href="#" class = "nav-link" onclick="">US UFO Sightings by Year</a>
+                </li>
+                <li class="form-inline my-2 my-lg-0 mr-auto">
+                    <input class="form-control mr-lg-2" type="search" placeholder="Enter a Year: 1955-2014" aria-label="Search" id ="search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="addAllPoints();">Search</button>
+                </li>
+            </ul>
+        </div>
+    </nav> --> 
+    <nav class="navbar navbar-light bg-dark justify-content-between">
+        <a class="navbar-brand text-light">GIS-E: UFO sightings between 1955 and 2014. Click each point to find the description!</a>
+        <li class="form-inline">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="addAllPoints();">Search</button>
+        </li>
+    </nav>
+      
+        <div id="mapid" style="width: 100%; height: 920px"></div>
+        <!-- <div id="mapid" style="width: 100%;"></div> -->
+
+        <script>
+        // Global variables
+        var mymap = L.map('mapid').setView([53.041213,-2.935086], 6);
+        
+        function loadMap() {
+                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+                    maxZoom: 18,
+                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+                        'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                    id: 'mapbox/streets-v11',
+                    tileSize: 512,
+                    zoomOffset: -1,
+                    center: [0,0],
+                    zoom:3
+                }).addTo(mymap);
+            }
+
+        document.addEventListener('DOMContentLoaded', function() {
+                // functions that happen on load
+                loadMap();
+            }, false);
+
+            function addAllPoints() {
+
+                try {
+                    mymap.eachLayer(function (layer) {
+                        // this will check if it is layer first, so does not delete map tiles
+                        if (!!layer.toGeoJSON) {
+                            mymap.removeLayer(layer);
+                        }
+                        })
+                    } catch {
+                alert('Remove all other answers..');
+                } 
+
+                year = parseInt(document.getElementById('search').value);
+                console.log(year);
+
+                let lyrSpider = L.geoJSON(uk_ufos, {
+                    filter: function(feature, layer) {
+                        if (year == feature.properties.datetime) {
+                            console.log(feature);
+                            return true;
+                        }
+                    }
+                }).bindPopup(function(layer) {
+                    var comment = "<h6> Year: " + layer.feature.properties.datetime;
+                    comment = comment + '<h6> Shape: '+ layer.feature.properties.shape + '</h6>'
+                    comment = comment + '<h6> Comments: </h6>'
+                    comment = comment + '<p>' + layer.feature.properties.comments+ '</p>'
+                    return comment
+                }).addTo(mymap);
+
+            }
+        
+        </script>
+    </body>
+</html>
+
